@@ -12,6 +12,7 @@ import {ENV_PROVIDERS} from './platform/environment';
 import {provideStore} from "@ngrx/store";
 import {instrumentStore, devtoolsConfig} from '@ngrx/devtools';
 import {App} from './app';
+import {MDL} from './app/mdl';
 
 import {counter} from './app/reducer/counter';
 
@@ -32,7 +33,8 @@ export function main() {
             position: 'right',
             visible: true,
             size: 0.3
-        })
+        }),
+    ...[MDL]
   ])
   .catch(err => console.error(err));
 

@@ -3,7 +3,7 @@ import {Store} from '@ngrx/store';
 import {Observable} from 'rxjs';
 
 import {INCREMENT, DECREMENT, RESET} from '../reducer';
-import {MDL} from '../mdl';
+//import {MDL} from '../mdl';
 
 interface AppState {
   counter: number;
@@ -16,8 +16,7 @@ interface AppState {
         <div>Current Count: {{ counter | async }}</div>
         <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" (click)="decrement()">Decrement</button>
       </div>
-    `,
-    directives: [MDL]
+    `
 })
 export class Home {
     counter: Observable<number>;
