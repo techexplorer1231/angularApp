@@ -16,4 +16,4 @@ export const counter: Reducer<number> = (state: number = 0, action: Action) => {
         default:
             return state;
     }
-}
+};
