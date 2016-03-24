@@ -11,10 +11,10 @@ import {DIRECTIVES, PIPES, PROVIDERS} from './platform/browser';
 import {ENV_PROVIDERS} from './platform/environment';
 import {provideStore} from "@ngrx/store";
 import {instrumentStore, devtoolsConfig} from '@ngrx/devtools';
-import {App} from './app';
-import {MDL} from './app/mdl';
 
-import {counter} from './app/reducer/counter';
+import {App} from './app';
+import {MDL} from './app';
+import {counter} from './app/counter/reducer';
 
 /*
  * Bootstrap our Angular app with a top level component `App` and inject
@@ -28,13 +28,13 @@ export function main() {
     ...DIRECTIVES,
     ...PIPES,
     ...provideStore({counter}),
+    ...[MDL],
     ...instrumentStore(),
     ...devtoolsConfig({
             position: 'right',
             visible: true,
             size: 0.3
-        }),
-    ...[MDL]
+        })
   ])
   .catch(err => console.error(err));
 
