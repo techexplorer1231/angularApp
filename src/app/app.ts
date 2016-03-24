@@ -3,9 +3,10 @@
  */
 import {Component} from 'angular2/core';
 import {RouteConfig, Router} from 'angular2/router';
-import {Devtools} from '@ngrx/devtools';
 
 import {Counter} from './counter/component';
+import {ProductCard} from './product/component';
+
 import {counter} from './counter/reducer';
 
 /*
@@ -15,10 +16,10 @@ import {counter} from './counter/reducer';
 @Component({
     selector: 'app',
     template: require('./app.html'),
-    styles: [require('./app.css')],
-    directives: [Devtools]
+    styles: [require('./app.css')]
 })
 @RouteConfig([
-    { path: '/', name: 'Counter', component: Counter, useAsDefault: true }
+    { path: '/', name: 'Counter', component: Counter, useAsDefault: true },
+    { path: '/product', name: 'ProductCard', component: ProductCard }
 ])
 export class App { }

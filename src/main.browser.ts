@@ -10,7 +10,6 @@ import {bootstrap} from 'angular2/platform/browser';
 import {DIRECTIVES, PIPES, PROVIDERS} from './platform/browser';
 import {ENV_PROVIDERS} from './platform/environment';
 import {provideStore} from '@ngrx/store';
-import {instrumentStore, devtoolsConfig} from '@ngrx/devtools';
 
 import {App} from './app';
 import {MDL} from './app';
@@ -28,13 +27,7 @@ export function main() {
     ...DIRECTIVES,
     ...PIPES,
     ...provideStore({counter}),
-    ...[MDL],
-    ...instrumentStore(),
-    ...devtoolsConfig({
-            position: 'right',
-            visible: true,
-            size: 0.3
-        })
+    ...[MDL]
   ])
   .catch(err => console.error(err));
 
